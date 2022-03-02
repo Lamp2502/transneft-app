@@ -1,0 +1,173 @@
+@import '../../../../utils/variables';
+
+.component {
+  display: flex;
+  min-width: 100%;
+  width: 100%;
+  height: calc(100vh - #{$sidebarHeight});
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  height: 122px;
+  background-color: $backgroundColorWhite;
+  flex-direction: column;
+  width: 100%;
+
+  h2 {
+    @include default();
+    @include medium-text(30px, 120%, $mainBlue);
+    font-family: 'Ubuntu';
+    margin: 20px 0 0 40px;
+    height: 40px;
+    align-self: baseline;
+  }
+
+  .panelTabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .tabs {
+      display: flex;
+      height: 22px;
+      margin: 20px 0 0 40px;
+      @include bold-text(16px, 16px, $black);
+      width: 100%;
+
+      .item {
+        display: flex;
+        margin-right: 50px;
+      }
+
+      .link {
+        @include defaultButton();
+        @include regular-text(16px, 24px, $black);
+
+        color: $black;
+        text-decoration: none;
+        background-color: $backgroundColorWhite;
+      }
+      .active {
+        @include bold-text(16px, 24px, $black);
+
+        border-bottom: 2px solid #005596;
+      }
+    }
+
+    .control {
+      display: flex;
+      margin-right: 20px;
+      height: 20px;
+
+      &Icon {
+        @include defaultButton();
+        display: flex;
+        width: 20px;
+        margin-left: 20px;
+        background-color: $backgroundColorWhite;
+      }
+    }
+  }
+}
+
+.main {
+  display: flex;
+  background-color: $backgroundColorMain;
+  height: 100vh;
+  width: 100%;
+  margin-top: 20px;
+
+  .table {
+    display: flex;
+    @include default();
+    flex-direction: column;
+    width: 100%;
+    margin: 0 20px;
+  }
+
+  .headerTable {
+    @include default();
+    @include regular-text(16px, 24px, $textGrey);
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid $textGrey;
+    height: 24px;
+    padding: 24px 0 10px 0;
+    width: 100%;
+  }
+
+  .rowTable {
+    @include default();
+    @include regular-text(18px, 20px, $mainBlack);
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid $textGrey;
+    height: 48px;
+    padding: 16px 0 10px 0;
+    width: 100%;
+  }
+
+  .item {
+    display: flex;
+    @include default();
+    padding-right: 2.5%;
+    text-align: left;
+    align-self: center;
+
+    &:nth-child(1) {
+      max-width: 124px;
+      width: 100%;
+    }
+
+    &:nth-child(2) {
+      max-width: 124px;
+      width: 100%;
+    }
+
+    &:nth-child(3) {
+      max-width: 171px;
+      width: 100%;
+    }
+
+    &:nth-child(4) {
+      max-width: 334px;
+      width: 100%;
+    }
+    &:nth-child(5) {
+      max-width: 240px;
+      width: 100%;
+    }
+    &:nth-child(6) {
+      max-width: 224px;
+      width: 100%;
+    }
+    &:nth-child(7) {
+      max-width: 108px;
+      width: 100%;
+    }
+    .button {
+      @include defaultButton();
+      @include bold-text(18px, 24px, $white);
+      width: 108px;
+      height: 48px;
+      opacity: 0.8;
+      border-radius: 8px;
+      background-color: $green;
+      &unActive {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .unActive {
+    @include regular-text(18px, 20px, $textGrey);
+  }
+
+  .link {
+    color: $mainBlack;
+  }
+}

@@ -1,0 +1,285 @@
+@import '../../../../../../../utils/variables.scss';
+
+.title {
+  display: flex;
+  height: 42px;
+  min-width: 600px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $lightGrey;
+
+  &One {
+    justify-content: flex-start;
+  }
+
+  p {
+    @include default();
+    @include medium-text(24px, 29px, $mainBlue);
+    font-family: 'Ubuntu', sans-serif;
+  }
+}
+
+.iconOne {
+  margin-left: 26px;
+  align-self: center;
+  justify-content: space-between;
+  transform: rotate(180deg);
+}
+
+.table {
+  display: flex;
+  @include default();
+  flex-direction: column;
+  width: 100%;
+  overflow-x: auto;
+  align-items: center;
+  position: relative;
+  &Open {
+    min-height: 550px;
+  }
+  .row {
+    @include default();
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    // height: 131px;
+    width: 100%;
+    border-bottom: 1px solid $lightGrey;
+    &Title {
+      display: flex;
+      height: 28px;
+      flex-direction: row;
+      align-items: center;
+      .roll {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: $mainBlue;
+        @include medium-text(18px, 22px, $white);
+        font-family: 'Ubuntu';
+      }
+      .pid {
+        margin-right: 20px;
+        padding: 4px 10px;
+        box-sizing: border-box;
+        @include regular-text(18px, 18px, $mainBlue);
+        box-shadow: 0px 0px 4px rgba(27, 27, 27, 0.4);
+        border-radius: 8px;
+      }
+      label {
+        @include regular-text(16px, 18px, $black);
+        position: relative;
+        padding-left: 28px;
+        margin-right: 20px;
+        &:before {
+          content: '';
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          background: #ffffff;
+          border: 1px solid $lightGrey;
+          border-radius: 4px;
+          left: 0;
+        }
+        &:after {
+          content: '';
+          background-image: url('../../../../../../../assets/checked.svg');
+          width: 18px;
+          height: 18px;
+          background-size: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: none;
+        }
+      }
+      input {
+        display: none;
+      }
+      input[type='checkbox']:checked + label {
+        &:after {
+          display: block;
+        }
+      }
+    }
+    &Content {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      max-width: 972px;
+      height: 73px;
+      margin: 10px 0 20px 48px;
+      align-items: center;
+      &Open {
+        max-width: 1560px;
+        justify-content: space-evenly;
+      }
+      .name {
+        display: flex;
+        height: 58px;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 108px;
+        .iconDown {
+          @include defaultButton();
+          background-color: $backgroundColorWhite;
+          width: 25px;
+          height: 58px;
+          .rotate {
+            transform: rotate(180deg);
+          }
+        }
+        p {
+          @include default();
+          @include bold-text(24px, 28px, $mainBlack);
+          margin-right: 10px;
+        }
+      }
+      .count {
+        display: flex;
+        height: 58px;
+        width: 132px;
+        align-items: baseline;
+        margin-right: 29px;
+        p {
+          @include default();
+          @include bold-text(48px, 58px, $mainBlue);
+          font-family: 'Ubuntu';
+          margin-right: 8px;
+        }
+        span {
+          @include default();
+          @include bold-text(24px, 29px, $mainBlue);
+          font-family: 'Ubuntu';
+        }
+      }
+      .date {
+        display: flex;
+        height: 73px;
+        .block {
+          display: flex;
+          flex-direction: column;
+          width: 190px;
+          max-width: 100%;
+          margin-right: 39px;
+          span {
+            @include regular-text(14px, 18px, $textGrey);
+            text-align: start;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+        .item {
+          margin-top: 10px;
+          width: 190px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          box-sizing: border-box;
+          box-shadow: 0 0 5px rgba(27, 27, 27, 0.3);
+          border-radius: 8px;
+          height: 45px;
+          padding: 13px 10px;
+
+          p {
+            @include default();
+            display: block;
+            height: 45px;
+            @include regular-text(16px, 18px, $black);
+            text-align: start;
+          }
+        }
+      }
+    }
+    .itemInfo {
+      display: flex;
+      width: 100%;
+      max-width: 972px;
+      // height: 73px;
+      margin: 0 0 20px 48px;
+      flex-direction: column;
+      .itemNumber {
+        p {
+          @include default();
+          text-align: left;
+          @include regular-text(14px, 24px, $textGrey);
+        }
+        &Win {
+          margin-top: 10px;
+          width: 277px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          box-sizing: border-box;
+          box-shadow: 0 0 5px rgba(27, 27, 27, 0.3);
+          border-radius: 8px;
+          height: 45px;
+          padding: 13px 10px;
+          @include regular-text(18px, 22px, $black);
+        }
+      }
+      .itemList {
+        display: flex;
+        width: 318px;
+        margin-top: 20px;
+        p {
+          @include default();
+          @include regular-text(14px, 16px, $mainBlue);
+          display: flex;
+          align-self: center;
+        }
+        .iconDown {
+          @include defaultButton();
+          background-color: $backgroundColorWhite;
+          margin-left: 10px;
+
+          width: 24px;
+          height: 24px;
+          .rotate {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.titleBlock {
+  display: flex;
+}
+
+.buttonBlock {
+  display: flex;
+  width: 68px;
+  height: 24px;
+  justify-content: space-between;
+}
+
+.buttonTrans {
+  @include defaultButton();
+  background-color: $backgroundColorWhite;
+}
+
+.button {
+  @include defaultButton();
+  position: sticky;
+  left: 0;
+  opacity: 0.8;
+  border-radius: 8px;
+  display: flex;
+  width: 209px;
+  height: 54px;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: $lightBlue;
+  justify-content: center;
+  align-items: center;
+  @include bold-text(18px, 24px, $white);
+  margin: 30px 0;
+}

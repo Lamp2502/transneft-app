@@ -1,0 +1,376 @@
+@import '../../../../utils/variables';
+
+.component {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - #{$sidebarHeight});
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    height: 122px;
+    background-color: $backgroundColorWhite;
+    flex-direction: column;
+    width: 100%;
+
+    h2 {
+      @include default();
+      @include medium-text(30px, 120%, $mainBlue);
+      font-family: 'Ubuntu', sans-serif;
+      margin: 20px 0 0 40px;
+      height: 40px;
+      align-self: baseline;
+    }
+
+    .panelTabs {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .tabs {
+        display: flex;
+        height: 22px;
+        margin: 20px 0 0 40px;
+        @include regular-text(16px, 16px, $black);
+        width: 100%;
+        align-items: center;
+
+        .dashIcon {
+          margin-left: 5px;
+          @media screen and (max-width: 1280px) {
+            margin-left: -20px;
+          }
+        }
+
+        .item {
+          display: flex;
+          margin-top: 20px;
+
+          label {
+            @include regular-text(16px, 18px, $black);
+            position: relative;
+            padding-left: 28px;
+
+            &:before {
+              content: '';
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: #ffffff;
+              border: 1px solid $lightGrey;
+              border-radius: 4px;
+              left: 0;
+            }
+
+            &:after {
+              content: '';
+              background-image: url('../../../../assets/checked.svg');
+              width: 18px;
+              height: 18px;
+              background-size: cover;
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: none;
+            }
+          }
+
+          input {
+            display: none;
+          }
+
+          input[type='checkbox']:checked + label {
+            &:after {
+              display: block;
+            }
+          }
+        }
+
+        .datePicker {
+          @media screen and (max-width: 1280px) {
+            transform: scale(0.8);
+            margin-left: -20px;
+          }
+        }
+
+        .select {
+          @media screen and (max-width: 1280px) {
+            transform: scale(0.8);
+            margin-left: -20px;
+          }
+        }
+
+        .applyButton {
+          position: relative;
+          margin-left: 20px;
+          width: 174px;
+          height: 34px;
+          border-radius: 8px;
+          @media screen and (max-width: 1280px) {
+            transform: scale(0.8);
+            position: absolute;
+            right: 160px;
+          }
+
+          span {
+            position: absolute;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 24px;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+          }
+
+          @media screen and (max-width: 1280px) {
+            width: 120px;
+            margin-left: 20px;
+          }
+        }
+
+        .item {
+          display: flex;
+          margin-right: 50px;
+          margin-top: 2px;
+          @media screen and (max-width: 1280px) {
+            margin-right: 20px;
+          }
+        }
+
+        .active {
+          border-bottom: 2px solid #005596;
+        }
+
+        .link {
+          color: $black;
+          text-decoration: none;
+        }
+
+        li {
+          margin-left: 5px;
+        }
+
+        input {
+          &:nth-child(3) {
+            margin-right: 20px;
+            width: 173px;
+          }
+
+          &:nth-child(4) {
+            margin-right: 20px;
+            width: 173px;
+          }
+        }
+
+        select {
+          width: 179px;
+        }
+      }
+
+      .control {
+        display: flex;
+        margin-right: 20px;
+        margin-top: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+
+        &Icon {
+          @include defaultButton();
+          display: flex;
+          width: 20px;
+          margin-left: 20px;
+          background-color: $backgroundColorWhite;
+        }
+      }
+    }
+  }
+
+  .main {
+    display: flex;
+    background-color: $backgroundColorMain;
+    height: 100vh;
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: scroll;
+
+    .table {
+      display: flex;
+      @include default();
+      flex-direction: column;
+      width: 100%;
+      margin: 0 20px;
+      overflow-x: scroll;
+
+      .headerTable {
+        @include default();
+        @include regular-text(16px, 16px, $textGrey);
+        display: flex;
+        flex-direction: row;
+        border-bottom: 2px solid $textGrey;
+        height: 80px;
+        width: 100%;
+        padding: 24px 0 20px 0;
+        background-color: #e5e5e5;
+
+        .item {
+          display: flex;
+          @include default();
+          /*padding-right: 1.7%;*/
+          padding-right: 2%;
+          @media screen and (max-width: 1280px) {
+            transform: scale(0.9);
+            padding-right: 0;
+            margin-left: -5px;
+          }
+
+          &:nth-child(1) {
+            max-width: 118px;
+            width: 100%;
+          }
+
+          &:nth-child(2) {
+            max-width: 270px;
+            width: 100%;
+          }
+
+          &:nth-child(3) {
+            max-width: 200px;
+            width: 100%;
+          }
+
+          &:nth-child(4) {
+            max-width: 300px;
+            width: 100%;
+          }
+
+          &:nth-child(5) {
+            max-width: 300px;
+            width: 100%;
+          }
+
+          &:nth-child(6) {
+            max-width: 180px;
+            width: 100%;
+          }
+
+          &:nth-child(7) {
+            max-width: 260px;
+            width: 100%;
+          }
+
+          &:nth-child(8) {
+            max-width: 460px;
+            width: 100%;
+          }
+
+          &:nth-child(9) {
+            max-width: 260px;
+            width: 100%;
+          }
+        }
+
+        .searchInput {
+          /*position: relative;*/
+          margin-top: 20px;
+
+          input {
+            width: 130px;
+            background: #ffffff;
+            border: 1px solid #dddee2;
+            box-sizing: border-box;
+            border-radius: 8px;
+            height: 36px;
+            outline-color: #00447c;
+            @media screen and (max-width: 1280px) {
+              width: 100px;
+            }
+          }
+        }
+      }
+
+      .rowTable {
+        @include default();
+        @include regular-text(16px, 16px, $mainBlack);
+        display: flex;
+        flex-direction: row;
+        border-bottom: 2px solid $textGrey;
+        height: 48px;
+        padding: 46px 0 10px 0;
+        width: 100%;
+      }
+    }
+
+    .item {
+      display: flex;
+      @include default();
+      padding-right: 2%;
+      align-self: center;
+      width: 100%;
+      text-align: left;
+      @media screen and (max-width: 1280px) {
+        font-size: 14px;
+        padding-right: 0;
+        display: block;
+      }
+
+      &:nth-child(1) {
+        max-width: 118px;
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        max-width: 170px;
+        width: 100%;
+      }
+
+      &:nth-child(3) {
+        max-width: 160px;
+        width: 100%;
+      }
+
+      &:nth-child(4) {
+        max-width: 160px;
+        width: 100%;
+      }
+
+      &:nth-child(5) {
+        max-width: 170px;
+        width: 100%;
+      }
+
+      &:nth-child(6) {
+        max-width: 165px;
+        width: 100%;
+      }
+
+      &:nth-child(7) {
+        max-width: 165px;
+        width: 100%;
+      }
+
+      &:nth-child(8) {
+        max-width: 260px;
+        width: 100%;
+      }
+
+      &:nth-child(9) {
+        max-width: 160px;
+        width: 100%;
+      }
+    }
+
+    .link {
+      color: $mainBlack;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}

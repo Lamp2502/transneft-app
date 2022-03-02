@@ -1,0 +1,364 @@
+@import '../../../../../../utils/variables';
+
+@mixin window($color) {
+  border-radius: 32px;
+  box-shadow: 0 0 4px rgba(27, 27, 27, 0.3);
+  background-color: $color;
+}
+
+@mixin windowContent() {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(27, 27, 27, 0.3);
+  border-radius: 8px;
+
+  span {
+    @include default();
+    @include regular-text(14px, 16px, $textGrey);
+  }
+  p {
+    @include default();
+    @include bold-text(18px, 24px, $mainBlue);
+    text-align: start;
+  }
+}
+
+.main {
+  display: flex;
+  background-color: $backgroundColorMain;
+  min-width: 965px;
+  margin-top: 20px;
+  width: 100%;
+
+  .area {
+    width: 1100px;
+    max-width: 100%;
+    height: 1035px;
+    @include window($backgroundColorWhite);
+    margin: 20px 0 0 60px;
+    padding: 40px;
+    box-sizing: border-box;
+    @media screen and (max-width: 1440px) {
+      max-width: 900px;
+      transform: scale(0.6);
+      margin: -200px 0 0 -140px;
+    }
+
+    .title {
+      display: flex;
+      height: 42px;
+      min-width: 600px;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid $lightGrey;
+
+      p {
+        @include default();
+        @include medium-text(24px, 29px, $mainBlue);
+        font-family: 'Ubuntu';
+      }
+    }
+
+    .grif {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      p {
+        @include default();
+        @include medium-text(16px, 19px, $black);
+        margin-left: 10px;
+      }
+    }
+
+    .tabs {
+      display: flex;
+      height: 46px;
+      min-width: 600px;
+      width: 100%;
+      margin-top: 10px;
+      border-bottom: 1px solid $lightGrey;
+      @media screen and (max-width: 1440px) {
+        transform: scale(0.8);
+        margin: 0 0 0 -85px;
+      }
+
+      .item {
+        @include defaultButton();
+        width: 240px;
+        max-width: 100%;
+        height: 36px;
+        border: 2px solid $lightBlue;
+        border-radius: 8px;
+        background-color: $backgroundColorWhite;
+        @include regular-text(20px, 24px, $lightBlue);
+        margin-right: 20px;
+      }
+
+      .active {
+        background-color: $lightBlue;
+        @include regular-text(20px, 24px, $white);
+      }
+    }
+
+    .itemBlock {
+      display: grid;
+      min-width: 600px;
+      width: 100%;
+      margin-top: 20px;
+      grid-template-columns: 240px 240px 500px;
+      grid-template-rows: 74px 74px 74px 74px;
+      gap: 20px;
+      @media screen and (max-width: 1440px) {
+        transform: scale(0.8);
+        margin: -30px 0 0 -85px;
+      }
+    }
+
+    .item240 {
+      padding: 10px 10px 13px 10px;
+      width: 240px;
+      max-width: 100%;
+      height: 74px;
+      @include windowContent();
+    }
+
+    .item500 {
+      padding: 10px;
+      width: 500px;
+      height: 74px;
+      max-width: 100%;
+      @include windowContent();
+      @media screen and (max-width: 1440px) {
+      }
+    }
+
+    .itemBig500 {
+      padding: 10px;
+      width: 500px;
+      max-width: 100%;
+      height: 262px;
+      @include windowContent();
+      grid-row: 2/5;
+      grid-column: 1/3;
+      justify-content: flex-start;
+
+      .row {
+        display: flex;
+        margin-bottom: 20px;
+
+        &:nth-child(4) {
+          padding-bottom: 10px;
+          margin-bottom: 0;
+          border-bottom: 1px solid $lightGrey;
+        }
+      }
+
+      .rowInp {
+        margin-top: 10px;
+        height: 18px;
+      }
+
+      span {
+        width: 122px;
+        max-width: 100%;
+        @include default();
+        @include regular-text(14px, 17px, $textGrey);
+        margin-right: 40px;
+        text-align: start;
+      }
+
+      p {
+        width: 318px;
+        max-width: 100%;
+        @include default();
+        @include regular-text(16px, 18px, $black);
+        text-align: start;
+      }
+    }
+
+    .itemFull {
+      min-width: 600px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 20px;
+
+      .item {
+        display: flex;
+        min-width: 600px;
+        width: 100%;
+        margin-top: 10px;
+        height: 88px;
+        @include windowContent();
+        padding: 10px;
+        box-sizing: border-box;
+
+        p {
+          @include default();
+          @include regular-text(16px, 18px, $black);
+          text-align: start;
+        }
+      }
+
+      span {
+        width: 240px;
+        max-width: 100%;
+        @include default();
+        @include regular-text(14px, 24px, $textGrey);
+        text-align: start;
+      }
+    }
+
+    .divider {
+      border: 1px solid $lightGrey;
+      margin: 20px 0 10px 0;
+      width: 100%;
+    }
+
+    .dateBlock {
+      display: flex;
+      margin-bottom: 20px;
+      width: 100%;
+
+      .block {
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        max-width: 100%;
+        height: 73px;
+        margin-right: 20px;
+
+        span {
+          @include regular-text(14px, 24px, $textGrey);
+          text-align: start;
+        }
+      }
+
+      .item {
+        margin-top: 10px;
+        width: 240px;
+        @include windowContent();
+        height: 45px;
+        padding: 13px 10px;
+        @media screen and (max-width: 1440px) {
+          width: 190px;
+        }
+
+        p {
+          @include default();
+          display: block;
+          height: 45px;
+          @include regular-text(16px, 18px, $black);
+          text-align: start;
+        }
+      }
+
+      .terminate {
+        width: 500px;
+        @media screen and (max-width: 1440px) {
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  .subArea {
+    width: 365px;
+    height: 583px;
+    @include window($backgroundColorBlue);
+    margin: 20px 0 0 20px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    @media screen and (max-width: 1440px) {
+      transform: scale(0.7);
+      margin-left: -220px;
+      margin-top: -80px;
+    }
+
+    .title {
+      display: flex;
+      height: 42px;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid $lightGrey2;
+
+      p {
+        @include default();
+        @include medium-text(24px, 29px, $mainBlue);
+        font-family: 'Ubuntu';
+      }
+
+      .icon {
+        display: flex;
+        align-self: flex-end;
+        margin-bottom: 20px;
+      }
+    }
+
+    .treeStage {
+      display: flex;
+      margin-top: 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .branch {
+      display: flex;
+      width: 285px;
+      height: 32px;
+
+      p {
+        @include default();
+        @include regular-text(16px, 19px, $lightBlue3);
+        align-self: center;
+        text-align: start;
+      }
+
+      .active {
+        @include bold-text(16px, 19px, $orange);
+      }
+
+      .activeStage {
+        fill: $orange;
+        stroke: $orange;
+        margin-right: 10px;
+      }
+
+      .stage {
+        fill: $lightBlue3;
+        stroke: $lightBlue3;
+        margin-right: 10px;
+      }
+
+      .odd {
+        display: block;
+        width: 121px;
+      }
+
+      .even {
+        display: block;
+        width: 112px;
+        margin-right: 10px;
+        text-align: start;
+      }
+    }
+
+    .divider {
+      margin: 30px 10px 30px 0;
+      opacity: 0.6;
+      border: 1px dashed $lightBlue2;
+      transform: rotate(90deg);
+      width: 40px;
+    }
+  }
+}

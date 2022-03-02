@@ -1,5 +1,7 @@
 #  https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 spring:
+  h2.console.enabled: true
+
   jpa:
     show-sql: true
     open-in-view: false
@@ -29,7 +31,7 @@ spring:
     username: sa
     password:
 
-# Jackson Serialization Issue Resolver
+  # Jackson Serialization Issue Resolver
   jackson.visibility:
     field: any
     getter: none

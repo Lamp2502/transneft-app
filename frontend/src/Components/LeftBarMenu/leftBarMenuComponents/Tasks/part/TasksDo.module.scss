@@ -1,0 +1,119 @@
+@import '../../../../../utils/variables';
+
+.main {
+  display: flex;
+  background-color: $backgroundColorMain;
+  height: 100vh;
+  width: 100%;
+  margin-top: 20px;
+
+  .table {
+    display: flex;
+    @include default();
+    flex-direction: column;
+    width: 100%;
+    margin: 0 20px;
+  }
+
+  .headerTable {
+    @include default();
+    @include regular-text(16px, 24px, $textGrey);
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid $textGrey;
+    height: 24px;
+    padding: 24px 0 10px 0;
+    width: 100%;
+  }
+
+  .rowTable {
+    @include default();
+    @include regular-text(18px, 20px, $mainBlack);
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid $textGrey;
+    height: 48px;
+    padding: 16px 0 10px 0;
+    width: 100%;
+    @media screen and (max-width: 1280px) {
+      font-size: 12px;
+    }
+  }
+
+  .item {
+    display: flex;
+    @include default();
+    padding-right: 2.5%;
+    text-align: left;
+    align-self: center;
+    @media screen and (max-width: 1280px) {
+      font-size: 12px;
+      padding-right: 0;
+    }
+
+    &:nth-child(1) {
+      max-width: 124px;
+      width: 100%;
+    }
+
+    &:nth-child(2) {
+      max-width: 124px;
+      width: 100%;
+    }
+
+    &:nth-child(3) {
+      max-width: 171px;
+      width: 100%;
+    }
+
+    &:nth-child(4) {
+      max-width: 300px;
+      width: 100%;
+    }
+
+    &:nth-child(5) {
+      max-width: 240px;
+      width: 100%;
+    }
+
+    &:nth-child(6) {
+      max-width: 424px;
+      width: 100%;
+    }
+
+    &:nth-child(7) {
+      max-width: 135px;
+      width: 100%;
+    }
+
+    .button {
+      @include defaultButton();
+      @include bold-text(18px, 24px, $white);
+      width: 142px;
+      height: 48px;
+      opacity: 0.8;
+      border-radius: 8px;
+      background-color: $green;
+      @media screen and (max-width: 1280px) {
+        position: relative;
+        right: 28px;
+        transform: scale(0.6);
+      }
+
+      &unActive {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .unActive {
+    @include regular-text(18px, 20px, $textGrey);
+  }
+
+  .link {
+    color: $mainBlack;
+    /*@media screen and (max-width: 1280px) {
+      font-size: 13px;
+    }*/
+  }
+}

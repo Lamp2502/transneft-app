@@ -1,0 +1,9 @@
+.spinner {
+  img {
+    position: absolute;
+    top: 750px;
+    @media screen and (max-width: 1440px) {
+      top: 650px;
+    }
+  }
+}

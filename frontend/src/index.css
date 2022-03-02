@@ -1,0 +1,24 @@
+@import url('./assets/fonts/ubuntu.css');
+
+::-webkit-scrollbar {
+  width: 10px; /* ширина для вертикального скролла */
+  height: 12px; /* высота для горизонтального скролла */
+  background-color: #D7E2EE;
+  border-radius:9em;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #00447C;
+  border-radius: 9em;
+  /*box-shadow: inset 1px 1px 1px #f3faf7;*/
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

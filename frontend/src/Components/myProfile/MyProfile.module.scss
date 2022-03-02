@@ -1,0 +1,111 @@
+@import '../../utils/variables';
+
+.myProfile {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+  width: 100%;
+  height: calc(100vh - #{$sidebarHeight});
+
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: #efefef;
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      margin-left: 40px;
+      margin-top: 48px;
+      height: 125px;
+
+      .profileInfo {
+        width: 100%;
+        height: 96px;
+        margin-top: 10px;
+        margin-left: 20px;
+
+        div:nth-child(1) {
+          display: flex;
+          width: 100%;
+          height: 48px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 32px;
+          color: #00447c;
+          align-items: center;
+        }
+
+        div:nth-child(2) {
+          display: flex;
+          width: 100%;
+          height: 24px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          color: #09090b;
+          align-items: center;
+        }
+
+        div:last-child {
+          display: flex;
+          width: 100%;
+          height: 24px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          color: #898989;
+          align-items: center;
+        }
+      }
+    }
+
+    .profileForm {
+      display: flex;
+      flex-direction: column;
+      margin-left: 40px;
+      margin-top: 50px;
+      height: 100%;
+
+      .inputForm {
+        width: 957px;
+        height: 56px;
+        margin-top: 10px;
+        background: #ffffff;
+        border: 1px solid #dddee2;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding-left: 30px;
+        outline-color: #00447C;
+
+        @media screen and (max-width: 1300px) {
+          width: 800px;
+        }
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+
+        ::placeholder {
+          width: 149px;
+          height: 24px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          align-items: center;
+        }
+
+        img {
+          margin-left: 15px;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+$mainGrey: #7f7f7f;
+$textGrey: #8f8f8f;
+$lightGrey: #e0e0e0;
+$lightGrey2: #c6c6c6;
+$mainBlue: #00447c;
+$lightBlue: #005596;
+$lightBlue2: #5e98c4;
+$lightBlue3: #96b9d3;
+$fileActiv: #0047ff;
+$orange: #ea8c00;
+$green: #009220;
+$mainBlack: #212721;
+$black: #212121;
+$white: #ffffff;
+$backgroundColorHeader: #f6f6f6;
+$backgroundColorGrey: #efefef;
+$backgroundColorMain: #e5e5e5;
+$backgroundColorWhite: #ffffff;
+$backgroundColorBlue: #d7e2ee;
+$backgroundColorReset: #ee3124;
+$backgroundColorGreen: #00dc30;
+$backgroundColorRed: #e25f56;
+
+$miniSideBarWidth: 96px;
+$headerHeight: 80px;
+$sidebarHeight: 80px;
+$contractHeaderHeight: 122px;
+
+@mixin default() {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin defaultButton() {
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin regular-text($size, $line-height, $color) {
+  font-family: 'Arial', 'Roboto', 'Open Sans';
+  font-weight: 400;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin medium-text($size, $line-height, $color) {
+  font-family: 'Arial', 'Roboto', 'Open Sans';
+  font-weight: 500;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin bold-text($size, $line-height, $color) {
+  font-family: 'Arial', 'Roboto', 'Open Sans';
+  font-weight: 700;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}

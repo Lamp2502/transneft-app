@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: medium;
+  font-weight: 500;
+  font-display: swap;
+  src: url('Ubuntu-Medium.ttf') format('truetype');
+}

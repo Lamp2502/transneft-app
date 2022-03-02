@@ -1,0 +1,313 @@
+@import '../../../../../utils/variables';
+
+.component {
+  display: flex;
+  min-width: 100%;
+  width: 100%;
+  flex-direction: column;
+  height: calc(100vh - #{$sidebarHeight});
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 122px;
+  justify-content: space-between;
+  background-color: $backgroundColorWhite;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .title {
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+
+    h2 {
+      @include default();
+      @include medium-text(30px, 36px, $mainBlue);
+      font-family: 'Ubuntu';
+      margin-left: 20px;
+      height: 40px;
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 20px 20px 0;
+
+    .button {
+      width: 80px;
+      height: 20px;
+      @include defaultButton();
+      background-color: $backgroundColorWhite;
+      margin-left: 10px;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  background-color: $backgroundColorMain;
+  height: 100%;
+  width: 100%;
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    max-width: 1332px;
+    width: 100%;
+    height: fit-content;
+    margin: 20px auto;
+    // padding: 30px 40px;
+    // box-sizing: border-box;
+    background-color: $backgroundColorWhite;
+    box-shadow: 0 0 4px rgba(27, 27, 27, 0.3);
+    border-radius: 32px;
+    @media screen and (max-width: 1280px) {
+      transform: scale(0.9);
+      margin: -20px 0 0 -30px;
+    }
+
+    .title {
+      width: 100%;
+      height: 94px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      background-color: $backgroundColorGrey;
+      border-radius: 32px 32px 0 0;
+
+      p {
+        @include default();
+        display: block;
+        text-align: left;
+        @include bold-text(18px, 22px, $black);
+        margin-bottom: 10px;
+      }
+
+      .blockList {
+        display: flex;
+        flex-direction: row;
+        // margin-top: 10px;
+      }
+
+      label {
+        display: flex;
+        text-align: left;
+        @include regular-text(18px, 20px, $mainBlue);
+        margin-right: 40px;
+      }
+
+      input {
+        @include default();
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      height: auto;
+      align-items: center;
+      width: 100%;
+      padding: 0 108px 60px 108px;
+      box-sizing: border-box;
+      @media screen and (max-width: 1280px) {
+        width: 120%;
+        margin-left: -110px;
+        transform: scale(0.9);
+      }
+
+      .block {
+        max-width: 223px;
+        width: 100%;
+        height: 366px;
+
+        p {
+          @include default();
+          @include bold-text(18px, 22px, $black);
+          text-align: start;
+        }
+
+        .column {
+          @include default();
+          display: flex;
+          flex-direction: column;
+          @media screen and (max-width: 1280px) {
+            margin-right: -50px;
+          }
+        }
+
+        .row {
+          display: flex;
+          margin-top: 20px;
+          // .inputContainer {
+          //   width: 18px;
+          //   height: 18px;
+          //   margin-right: 10px;
+          //   input {
+          //     @include default();
+          //     width: 18px;
+          //     height: 18px;
+          //   }
+          label {
+            @include regular-text(16px, 18px, $black);
+            position: relative;
+            padding-left: 28px;
+
+            &:before {
+              content: '';
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background: #ffffff;
+              border: 1px solid $lightGrey;
+              border-radius: 4px;
+              left: 0;
+            }
+
+            &:after {
+              content: '';
+              background-image: url('../../../../../assets/checked.svg');
+              width: 18px;
+              height: 18px;
+              background-size: cover;
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: none;
+            }
+          }
+
+          input {
+            display: none;
+          }
+
+          input[type='checkbox']:checked + label {
+            &:after {
+              display: block;
+            }
+          }
+        }
+      }
+
+      .wide {
+        max-width: 268px;
+        // margin-right: 30px;
+      }
+
+      // .right {
+      //   margin-left: 50px;
+      // }
+
+      .titleBlock {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 24px;
+        justify-content: space-between;
+
+
+        p {
+          @include default();
+        }
+
+        .blockArrow {
+          display: flex;
+          width: 45px;
+          height: 20px;
+          justify-content: space-between;
+        }
+
+        .icon {
+          width: 20px;
+          height: 20px;
+        }
+
+        .button {
+          width: 20px;
+          height: 20px;
+          @include defaultButton();
+          background-color: $backgroundColorWhite;
+        }
+      }
+
+      .mix {
+        display: flex;
+        width: 40px;
+        height: 366px;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 80px;
+
+        .buttonBlock {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 40px;
+          height: 70px;
+
+          .button {
+            width: 40px;
+            height: 30px;
+            @include defaultButton();
+            background-color: $backgroundColorWhite;
+          }
+        }
+      }
+
+      .divider {
+        display: flex;
+        width: 0;
+        height: 128px;
+        border: 1px solid $lightGrey;
+        margin-bottom: 20px;
+
+        &Bottom {
+          margin-bottom: 0;
+          margin-top: 20px;
+        }
+      }
+
+      .mix2 {
+        height: 366px;
+        margin: 0 100px 0 55px;
+      }
+    }
+
+    .blockButton {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    .button {
+      display: flex;
+      @include defaultButton();
+      width: 209px;
+      height: 54px;
+      @include bold-text(18px, 24px, $white);
+      opacity: 0.8;
+      border-radius: 8px;
+      justify-content: center;
+      align-items: center;
+
+      &Success {
+        background-color: $mainBlue;
+      }
+
+      &Reset {
+        background-color: $backgroundColorReset;
+      }
+    }
+  }
+}

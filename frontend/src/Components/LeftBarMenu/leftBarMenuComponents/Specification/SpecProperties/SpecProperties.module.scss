@@ -1,0 +1,774 @@
+@import '../../../../../utils/variables.scss';
+
+@mixin window($color) {
+  border-radius: 32px;
+  box-shadow: 0 0 4px rgba(27, 27, 27, 0.3);
+  background-color: $color;
+}
+
+@mixin windowContent() {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(27, 27, 27, 0.3);
+  border-radius: 8px;
+
+  span {
+    @include default();
+    @include regular-text(14px, 16px, $textGrey);
+  }
+  p {
+    @include default();
+    @include bold-text(18px, 24px, $mainBlue);
+    text-align: start;
+  }
+  .min {
+    @include bold-text(16px, 18px, $mainBlue);
+  }
+}
+
+.main {
+  display: flex;
+  background-color: $backgroundColorMain;
+  min-width: 965px;
+  margin-top: 20px;
+  width: 100%;
+  z-index: 0;
+
+  .area {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    width: 100%;
+    margin-left: 60px;
+  }
+
+  .mainBlock {
+    width: 100%;
+    height: auto;
+    // min-height: 522px;
+    @include window($backgroundColorWhite);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    @media screen and (max-width: 1280px) {
+      /*max-width: 900px;
+      transform: scale(0.6);
+      margin: -160px 0 0 -185px;*/
+      width: 60%;
+    }
+
+    .title {
+      display: flex;
+      height: 42px;
+      min-width: 600px;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $lightGrey;
+
+      &One {
+        justify-content: flex-start;
+      }
+
+      p {
+        @include default();
+        @include medium-text(24px, 29px, $mainBlue);
+        font-family: 'Ubuntu', sans-serif;
+      }
+    }
+
+    .iconOne {
+      margin-left: 26px;
+      align-self: center;
+    }
+
+    .grif {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        display: flex;
+        width: 16px;
+        height: 16px;
+      }
+
+      p {
+        @include default();
+        @include medium-text(16px, 19px, $black);
+        margin-left: 10px;
+      }
+    }
+
+    .tabs {
+      display: flex;
+      height: 46px;
+      min-width: 600px;
+      width: 100%;
+      margin-top: 10px;
+      border-bottom: 1px solid $lightGrey;
+      @media screen and (max-width: 1440px) {
+        transform: scale(0.8);
+        margin: 0 0 0 -64px;
+      }
+
+      .item {
+        @include defaultButton();
+        width: 240px;
+        max-width: 100%;
+        height: 36px;
+        border: 2px solid $lightBlue;
+        border-radius: 8px;
+        background-color: $backgroundColorWhite;
+        @include regular-text(20px, 24px, $lightBlue);
+        margin-right: 20px;
+      }
+
+      .active {
+        background-color: $lightBlue;
+        @include regular-text(20px, 24px, $white);
+      }
+    }
+
+    .itemBlock {
+      display: grid;
+      min-width: 600px;
+      width: 100%;
+      margin-top: 20px;
+      grid-template-columns: 240px 240px 500px;
+      grid-template-rows: 74px 74px 74px 74px;
+      gap: 20px;
+      @media screen and (max-width: 1280px) {
+        transform: scale(0.59);
+        margin: -60px 0 0 -125px;
+      }
+    }
+
+    .item240 {
+      padding: 10px 10px 13px 10px;
+      width: 240px;
+      max-width: 100%;
+      height: 74px;
+      @include windowContent();
+    }
+
+    .item500 {
+      padding: 10px;
+      width: 500px;
+      height: 74px;
+      grid-column: 1/3;
+      max-width: 100%;
+      @include windowContent();
+      @media screen and (max-width: 1440px) {
+      }
+    }
+
+    .item500wide {
+      padding: 10px;
+      width: 500px;
+      height: 74px;
+      max-width: 100%;
+      @include windowContent();
+      @media screen and (max-width: 1440px) {
+      }
+    }
+
+    .itemBig500 {
+      padding: 10px;
+      width: 500px;
+      max-width: 100%;
+      height: 262px;
+      @include windowContent();
+      grid-row: 1/4;
+      grid-column: 3/4;
+      justify-content: flex-start;
+
+      .row {
+        display: flex;
+        margin-bottom: 20px;
+
+        &:nth-child(4) {
+          padding-bottom: 10px;
+          margin-bottom: 0;
+          border-bottom: 1px solid $lightGrey;
+        }
+      }
+
+      .rowInp {
+        margin-top: 10px;
+        height: 18px;
+      }
+
+      span {
+        width: 122px;
+        max-width: 100%;
+        @include default();
+        @include regular-text(14px, 17px, $textGrey);
+        margin-right: 40px;
+        text-align: start;
+      }
+
+      p {
+        width: 318px;
+        max-width: 100%;
+        @include default();
+        @include regular-text(16px, 18px, $black);
+        text-align: start;
+      }
+
+      .link {
+        color: $fileActiv;
+        text-decoration: underline;
+      }
+    }
+
+    .itemFull {
+      min-width: 600px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 20px;
+
+      .item {
+        display: flex;
+        min-width: 600px;
+        width: 100%;
+        margin-top: 10px;
+        height: 120px;
+        background-color: $backgroundColorRed;
+        opacity: 0.6;
+        border-radius: 8px;
+        @include windowContent();
+        padding: 20px;
+        box-sizing: border-box;
+
+        p {
+          @include default();
+          @include regular-text(16px, 24px, $white);
+          text-align: start;
+        }
+      }
+
+      span {
+        width: 240px;
+        max-width: 100%;
+        @include default();
+        @include regular-text(14px, 24px, $textGrey);
+        text-align: start;
+      }
+    }
+
+    .divider {
+      border: 1px solid $lightGrey;
+      margin: 20px 0 10px 0;
+      width: 100%;
+    }
+
+    .dateBlock {
+      display: flex;
+      margin-bottom: 20px;
+      width: 100%;
+      @media screen and (max-width: 1440px) {
+        transform: scale(0.735);
+        margin: 0 0 0 -79px;
+      }
+
+      .block {
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        max-width: 100%;
+        height: 73px;
+        margin-right: 20px;
+
+        span {
+          @include regular-text(14px, 24px, $textGrey);
+          text-align: start;
+        }
+      }
+
+      .item {
+        margin-top: 10px;
+        width: 240px;
+        @include windowContent();
+        height: 45px;
+        padding: 13px 10px;
+        @media screen and (max-width: 1280px) {
+          width: 190px;
+        }
+
+        p {
+          @include default();
+          display: block;
+          height: 45px;
+          @include regular-text(16px, 18px, $black);
+          text-align: start;
+        }
+      }
+
+      .terminate {
+        width: 500px;
+        @media screen and (max-width: 1440px) {
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  .subArea {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blockData {
+    width: 365px;
+    @include window($backgroundColorBlue);
+    margin: 20px 0 0 20px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    @media screen and (max-width: 1280px) {
+      width: 250px;
+      margin: 15px 0 0 -320px;
+    }
+
+    &Comment {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      @include window($backgroundColorWhite);
+      justify-content: space-between;
+
+      .title {
+        padding: 30px 40px 10px 40px;
+      }
+    }
+
+    .commentsContent {
+      padding: 0 40px;
+      margin: 20px 0;
+      box-sizing: border-box;
+      height: 398px;
+      overflow-y: scroll;
+    }
+
+    .title {
+      box-sizing: border-box;
+      display: flex;
+      //height: 42px;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $lightGrey2;
+
+      p {
+        @include default();
+        @include medium-text(24px, 29px, $mainBlue);
+        font-family: 'Ubuntu', sans-serif;
+        word-wrap: break-word;
+        @media screen and (max-width: 1280px) {
+          font-size: 15px;
+        }
+      }
+
+      .icon {
+        display: flex;
+        align-self: center;
+      }
+    }
+
+    .treeButton {
+      display: flex;
+      align-self: center;
+      @include defaultButton();
+      background-color: $backgroundColorBlue;
+    }
+
+    .commentsButton {
+      display: flex;
+      align-self: center;
+      @include defaultButton();
+      background-color: #ffffff;
+    }
+
+    .treeStage {
+      display: flex;
+      margin-top: 20px;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (max-width: 1280px) {
+        transform: scale(0.9);
+        height: 360px;
+      }
+    }
+
+    .branch {
+      display: flex;
+      width: 285px;
+      height: 32px;
+      align-items: center;
+      @media screen and (max-width: 1280px) {
+        transform: scale(0.8);
+      }
+
+      p {
+        @include default();
+        @include regular-text(16px, 19px, $lightBlue3);
+        align-self: center;
+        text-align: start;
+      }
+
+      .active {
+        @include bold-text(16px, 19px, $orange);
+      }
+
+      .activeStage {
+        fill: $orange;
+        stroke: $orange;
+        margin-right: 10px;
+      }
+
+      .stage {
+        fill: $lightBlue3;
+        stroke: $lightBlue3;
+        margin-right: 10px;
+      }
+
+      .odd {
+        display: block;
+        width: 121px;
+      }
+
+      .even {
+        display: block;
+        width: 112px;
+        margin-right: 10px;
+        text-align: start;
+      }
+    }
+
+    .divider {
+      margin: 30px 10px 30px 0;
+      opacity: 0.6;
+      border: 1px dashed $lightBlue2;
+      transform: rotate(90deg);
+      width: 40px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 285px;
+      // height: 113px;
+      background-color: $backgroundColorBlue;
+      border-radius: 8px;
+      margin-top: 22px;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      @media screen and (max-width: 1280px) {
+        position: relative;
+        transform: scale(0.8);
+        right: 60px;
+        margin-top: -20px;
+      }
+
+      &Title {
+        @include default();
+        @include regular-text(14px, 22.4px, $textGrey);
+        text-align: start;
+        margin-bottom: 10px;
+      }
+
+      .content {
+        @include default();
+        @include regular-text(16px, 19px, $black);
+        text-align: start;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+        width: 100%;
+      }
+
+      .date {
+        @include default();
+        @include regular-text(14px, 14px, $textGrey);
+        align-self: flex-end;
+      }
+    }
+
+    .inputBlock {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+      height: 64px;
+      box-shadow: 0 0 4px rgba(19, 19, 19, 0.25);
+      border-radius: 0 0 32px 32px;
+
+      .fileUpload {
+        label {
+          cursor: pointer;
+        }
+      }
+
+      input {
+        width: 230px;
+        @include regular-text(16px, 24px, $textGrey);
+        border: none;
+        color: black;
+        outline: none;
+        @media screen and (max-width: 1280px) {
+          font-size: 12px;
+        }
+      }
+
+      .button {
+        @include defaultButton();
+        background-color: $backgroundColorWhite;
+      }
+
+      .iconEnter {
+        fill: $lightBlue;
+      }
+    }
+  }
+
+  .table {
+    display: flex;
+    @include default();
+    flex-direction: column;
+    width: 100%;
+    overflow-x: scroll;
+
+    .rowTable {
+      @include default();
+      @include regular-text(16px, 16px, $mainBlack);
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid $lightGrey;
+      height: 24px;
+      padding: 10px 0 10px 0;
+      width: 100%;
+
+      &Header {
+        @include regular-text(16px, 16px, $textGrey);
+      }
+    }
+
+    .item {
+      display: flex;
+      @include default();
+      padding-right: 5.88%;
+      text-align: left;
+      align-self: center;
+
+      &:nth-child(1) {
+        min-width: 60px;
+      }
+
+      &:nth-child(2) {
+        min-width: 120px;
+      }
+
+      &:nth-child(3) {
+        min-width: 120px;
+        // padding: 0;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+      }
+
+      &:nth-child(4) {
+        min-width: 240px;
+      }
+
+      &:nth-child(5) {
+        min-width: 120px;
+      }
+
+      &:nth-child(6) {
+        min-width: 60px;
+      }
+
+      &:nth-child(7) {
+        min-width: 120px;
+      }
+
+      &:nth-child(8) {
+        min-width: 120px;
+      }
+
+      &:nth-child(9) {
+        min-width: 180px;
+      }
+    }
+
+    .link {
+      color: $fileActiv;
+    }
+  }
+}
+
+.componentPerson {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 130px;
+
+  .header {
+    display: flex;
+    @include default();
+    @include regular-text(16px, 16px, $textGrey);
+    border-bottom: 1px solid $lightGrey;
+    padding: 10px 10px;
+  }
+
+  .row {
+    @include default();
+    @include regular-text(16px, 16px, $mainBlack);
+    display: flex;
+    flex-direction: row;
+    height: 24px;
+    padding: 10px 10px;
+
+    &Odd {
+      background: rgba(0, 85, 150, 0.1);
+    }
+  }
+
+  .item {
+    display: flex;
+    @include default();
+    padding-right: 5.88%;
+    text-align: left;
+    align-self: center;
+
+    &:nth-child(1) {
+      max-width: 400px;
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:nth-child(2) {
+      max-width: 190px;
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:nth-child(3) {
+      max-width: 300px;
+      width: 100%;
+      padding: 0;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+//---------Animation---------//
+.vectorEnter {
+  transform: rotate(180deg);
+}
+
+.vectorEnterActive {
+  transform: rotate(0deg);
+  transition: transform 500ms;
+}
+
+.vectorEnterDone {
+  transform: rotate(0deg);
+}
+
+.vectorExit {
+  transform: rotate(0deg);
+}
+
+.vectorExitActive {
+  transform: rotate(180deg);
+  transition: transform 500ms;
+}
+
+.vectorExitDone {
+  transform: rotate(180deg);
+}
+
+.treeEnter {
+  max-height: 60px;
+  height: auto;
+  transform: scaleY(0);
+}
+
+.treeEnterActive {
+  max-height: 583px;
+  transform: scaleY(1);
+  transition: transform 500ms ease-out, max-height 1000ms ease;
+}
+
+.treeEnterDone {
+  max-height: 583px;
+}
+
+.treeExit {
+  height: auto;
+  max-height: 583px;
+}
+
+.treeExitActive {
+  transform: scaleY(0);
+  max-height: 60px;
+  transition: transform 600ms ease-in-out, max-height 600ms ease-in-out;
+}
+
+.treeExitDone {
+  max-height: 60px;
+
+  .activeScale {
+    animation: active 500ms;
+  }
+}
+
+//
+.commentsContentEnter {
+  max-height: 60px;
+  height: auto;
+  transform: scaleY(0);
+}
+
+.commentsContentEnterActive {
+  max-height: 583px;
+  transform: scaleY(1);
+  transition: transform 500ms ease-out, max-height 1000ms ease;
+}
+
+.commentsContentEnterDone {
+  max-height: 583px;
+}
+
+.commentsContentExit {
+  height: auto;
+  max-height: 583px;
+}
+
+.commentsContentExitActive {
+  transform: scaleY(0);
+  max-height: 60px;
+  transition: transform 600ms ease-in-out, max-height 600ms ease-in-out;
+}
+
+.commentsContentExitDone {
+  max-height: 60px;
+  display: none;
+
+  .activeScale {
+    animation: active 500ms;
+  }
+}
